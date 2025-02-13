@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .resume {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .resume h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .experience, .education, .skills {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume1.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="resume">
+        <h1>My Resume</h1>
+
+
+
+
+        <!-- Skills Section -->
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Frontend Development:</strong> HTML, CSS, JavaScript, React</li>
+                <li><strong>Backend Development:</strong> Node.js, Python, Django</li>
+                <li><strong>Database Management:</strong> MySQL, MongoDB</li>
+                <li><strong>Tools & Platforms:</strong> Git, Docker, AWS, CI/CD</li>
+                <li><strong>Programming Languages:</strong> C, C++, Python, JavaScript</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience">
+            <h2>Professional Experience</h2>
+            <div>
+                <h3>Web Developer at XYZ Company</h3>
+                <p><em>Jan 2022 - Present</em></p>
+                <ul>
+                    <li>Developed and maintained responsive websites for clients using React and Node.js.</li>
+                    <li>Optimized website performance, improving load times by 30%.</li>
+                    <li>Collaborated with cross-functional teams to implement scalable solutions.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Frontend Developer at ABC Inc.</h3>
+                <p><em>Jun 2020 - Dec 2021</em></p>
+                <ul>
+                    <li>Designed and implemented interactive UI components for e-commerce applications.</li>
+                    <li>Improved user experience by integrating modern frontend technologies.</li>
+                    <li>Worked closely with designers to ensure pixel-perfect implementations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education">
+            <h2>Education</h2>
+            <div>
+                <h3>Bachelor of Technology in Computer Science</h3>
+                <p><em>University of XYZ, 2016 - 2020</em></p>
+                <ul>
+                    <li>Graduated with First Class Honors (GPA: 7.8/10).</li>
+                    <li>Key courses: Data Structures, Algorithms, Web Development, Software Engineering.</li>
+                    <li>Final Year Project: <strong>"IoT-Based Smart Home System"</strong> - Developed a system to control home devices remotely using IoT.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certified React Developer – Udemy (2021)</li>
+                <li>Advanced Python Programming – Coursera (2020)</li>
+                <li>AWS Certified Solutions Architect – AWS (2022)</li>
+            </ul>
+        </div>
+    </section>
+
+   
+</body>
+</html>

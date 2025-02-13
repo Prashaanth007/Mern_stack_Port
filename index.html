@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashaanth N A - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .intro {
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?engineering');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        .intro h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0288a3;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .projects, .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 300px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume1.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- Hero Section -->
+    <section class="intro">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hello! I'm Prashaanth N A, an engineering student passionate about technology and development. Explore my work and academic journey.</p>
+        <a href="portfolio.html" class="btn">View My Resume</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="card">
+                <h3>IoT Smart Home System</h3>
+                <p>An Internet of Things (IoT) project enabling remote control and monitoring of home devices.</p>
+            </div>
+            <div class="card">
+                <h3>Academic Management System</h3>
+                <p>A web-based application for students to track assignments, grades, and class schedules.</p>
+            </div>
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>This website, showcasing my skills and engineering achievements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>My Skills</h2>
+        <p>Technologies and tools I specialize in as an engineering student:</p>
+        <div class="skills">
+            <div class="card">
+                <h3>Programming Languages</h3>
+                <p>C++,Python,Java</p>
+            </div>
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, React.js, Node.js</p>
+            </div>
+            <div class="card">
+                <h3>Other Skills</h3>
+                <p>MATLAB, AutoCAD, Git, Microcontroller Programming</p>
+            </div>
+        </div>
+    </section>
+
+   
+</body>
+</html>

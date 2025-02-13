@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 30px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            flex-wrap: nowrap;
+            overflow-x: hidden;
+        }
+
+        /* LeftBar */
+        .left-bar {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            width: 25%;
+            min-width: 250px;
+            text-align: center;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 25px;
+            flex-shrink: 0;
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .profile-pic img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            font-size: 24px;
+            color: #3b3b3b;
+        }
+
+        .tagline {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .info-heading {
+            font-weight: bold;
+            color: lightslategray;
+            font-size: 14px;
+            min-width: 140px;
+        }
+
+        .info-value {
+            font-size: 14px;
+            color: #555;
+            word-wrap: break-word;
+            max-width: 230px;
+        }
+
+        /* RightBar */
+        .right-bar {
+            flex-grow: 1;
+            border-radius: 8px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color:lightslategray;
+            padding: 10px;
+            text-align: right;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #3e8e41;
+            transform: scale(1.05);
+        }
+
+        /* Content Section */
+        .content-section {
+            display: none;
+            margin-top: 20px;
+            padding: 5%;
+            padding-top: 3%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .content-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section.active {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        /* Contact Section Animations */
+        .contact-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .contact-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        /* Social Icons Hover Effect */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 30px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2); /* Enlarges the icon */
+            color: #4CAF50; /* Changes color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Bar -->
+        <div class="left-bar" id="leftBar">
+            <div class="profile-pic">
+                <img src="https://pics.craiyon.com/2023-11-19/pJ3Gw3vTQY-Joyn6yel29Q.webp" alt="Profile Picture">
+            </div>
+            <h2>Prashaanth N A</h2>
+            <p class="tagline">Passionate ECE Student<br>Bridging Hardware and Software</p><br>
+            <div class="info">
+                <div class="info-row">
+                    <div class="info-heading"><strong>Phone:</strong></div>
+                    <div class="info-value">+91 9629090813</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-heading"><strong>Email:</strong></div>
+                    <div class="info-value">prashaanthofficial@gmail.com</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-heading"><strong>College:</strong></div>
+                    <div class="info-value">Sri Krishna College of Engineering and Technology</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-heading"><strong>Degree:</strong></div>
+                    <div class="info-value">Bachelors in Engineering</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-heading"><strong>Branch:</strong></div>
+                    <div class="info-value">Electronics and Communication</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-heading"><strong>Year:</strong></div>
+                    <div class="info-value">2nd Year</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-heading"><strong>Programming Languages:</strong></div>
+                    <div class="info-value">C, C++, Java, Python, JavaScript, Assembly</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Bar -->
+        <div class="right-bar" id="rightBar">
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+
+            </nav>
+
+            <div id="home" class="content-section active">
+                <div class="home_container">
+                    <h2>Hello,</h2>
+                    <h2>I am Prashaanth</h2>
+                    <p>Currently pursuing a Bachelor's in Engineering at Sri Krishna College of Engineering and Technology, Coimbatore, with a CGPA of 7.8. I have developed a keen interest in technology, as demonstrated by my participation in a national-level technical symposium, where I secured the 3rd prize in a paper presentation competition. My project, titled "Crowd Monitoring & Detection" utilizes Passive Infrared (PIR) sensors integrated with Arduino micro controllers to monitor crowd levels in public sectors, thereby improving operational efficiency and enhancing the user experience.
+                        <br>
+                        <br>
+                        Additionally, I am an active member of the Drone Making Club, where I have gained practical experience in designing and constructing drones. This experience has helped me refine my skills in hardware integration, problem-solving, and collaborative teamwork.
+                        <br>
+                        <br>
+                        I possess proficiency in programming languages such as JAVA, C++, and SQL, and I am fluent in English, Hindi, and Tamil. I am also passionate about staying informed on current affairs, exploring the internet</p>
+                    </div>
+            </div>
+
+            <div id="skills" class="content-section">
+                <div class="skills_container">
+                    <h2>Technical Skills</h2>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Web Development</li>
+                        <li>Database Management System</li>
+                        <li>JDBC Connectivity</li>
+                        <li>Digital System Design</li>
+                        <li>Embedded Systems</li>
+                        <li>Circuit Analysis</li>
+                    </ul>
+                </div>
+                <div class="skills_container">
+                    <h2>Programming Skills</h2>
+                    <ul>
+                        <li>C Programming</li>
+                        <li>C++ Programming</li>
+                        <li>JAVA Programming</li>
+                        <li>Python Programming</li>
+                        <li>HTML/CSS</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="project" class="content-section">
+                <div class="project_container">
+                    <h2>Smart Crowd Management</h2>
+                    <p>Smart Crowd Management and Detection System: This project aims to enhance efficiency in government sectors by utilizing Passive Infrared (PIR) sensors for real-time crowd monitoring and management. By integrating PIR sensors with Arduino micro controllers, the system detects the number of people in specific areas, helping to avoid long queues and overcrowding. The data is transmitted to a central website, allowing users to view live crowd statuses and schedule their visits accordingly, saving valuable time. This smart system not only Improves operational efficiency but also enhances the overall user experience by offering a seamless, time-saving solution for individuals to plan their day</p>
+                </div>
+            </div>
+
+            <div id="contact" class="contact-section">
+                <div id="info_container" class="info">
+                    <div class="info-row">
+                        <div class="info-heading"><strong>Phone:</strong></div>
+                        <div class="info-value">+91 7299099661</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-heading"><strong>Email:</strong></div>
+                        <div class="info-value">alfazal.224@gmail.com</div>
+                    </div>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+                    <a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            event.preventDefault();
+            const sections = document.querySelectorAll('.content-section, .contact-section');
+            sections.forEach((section) => section.classList.remove('active'));
+
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+
+        window.onload = () => {
+            const leftBar = document.getElementById('leftBar');
+            const rightBar = document.getElementById('rightBar');
+
+            leftBar.style.animation = 'fadeInLeft 0.8s ease-out forwards';
+            rightBar.style.animation = 'fadeInRight 0.8s ease-out forwards';
+        };
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
